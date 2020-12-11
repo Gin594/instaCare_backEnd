@@ -6,8 +6,7 @@ import inc.bugfree.instacare.bean.UserBean;
 import inc.bugfree.instacare.service.AddressService;
 import inc.bugfree.instacare.service.CommentsService;
 import inc.bugfree.instacare.service.UserService;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,12 +15,12 @@ import java.util.Map;
 
 //import inc.bugfree.instacare.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping("/address")
 public class AddressController {
 
-    private static final Logger LOGGER = LogManager.getLogger(AddressController.class);
+
 
     private AddressService addressService = null;
 
@@ -71,6 +70,13 @@ public class AddressController {
     @ResponseBody
     public ResponseBean updateAddress(@PathVariable String userId,@PathVariable String addressId, @RequestBody Map<String, Object> updateData ) throws Exception {
         String ans = addressService.updateAddress(userId,addressId,updateData);
+        return new ResponseBean(200, "OK", ans);
+    }
+
+    @DeleteMapping("/{userId}/{addressId}")
+    @ResponseBody
+    public ResponseBean deleteAddress(@PathVariable String userId,@PathVariable String addressId) throws Exception {
+        String ans = addressService.deleteAddress(userId,addressId);
         return new ResponseBean(200, "OK", ans);
     }
 

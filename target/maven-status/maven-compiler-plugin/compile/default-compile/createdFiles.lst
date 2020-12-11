@@ -6,6 +6,7 @@ inc\bugfree\instacare\bean\RequestBean.class
 inc\bugfree\instacare\dao\CommentsDao.class
 inc\bugfree\instacare\util\SpringUtil.class
 inc\bugfree\instacare\service\UserService.class
+inc\bugfree\instacare\config\WebApplicationConfig.class
 inc\bugfree\instacare\dao\RatingDao.class
 inc\bugfree\instacare\controller\UserController.class
 inc\bugfree\instacare\bean\AddressBean.class

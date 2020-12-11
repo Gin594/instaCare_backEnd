@@ -6,8 +6,7 @@ import inc.bugfree.instacare.bean.UserBean;
 import inc.bugfree.instacare.dao.UserDao;
 import inc.bugfree.instacare.service.RequestService;
 import inc.bugfree.instacare.service.UserService;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping("/request")
 public class RequestController {
